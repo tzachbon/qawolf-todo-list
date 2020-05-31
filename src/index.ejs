@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link type="image/png" href="https://www.wix.com/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="<%= baseStaticsUrl %>app<% if (!debug) { %>.min<% } %>.css">
+
+    <!-- Run `npx add-sentry -p qawolf-todo-list -t [TEAM]` to add a valid Sentry link. More information at: https://github.com/wix-private/fed-infra/tree/master/add-sentry -->
+
+    <script src="https://<%= staticsDomain %>/polyfill/v2/polyfill<% if (!debug) { %>.min<% } %>.js?features=default,es6,es7,es2017&flags=gated&unknown=polyfill&rum=0"></script>
+    <script src="https://<%= staticsDomain %>/unpkg-semver/fedops-logger@5/fedops-logger.bundle.min.js"></script>
+    <script>
+      fedopsLogger.reportAppLoadStarted("qawolf-todo-list");
+    </script>
+    <script src="https://<%= staticsDomain %>/unpkg/react@16.12.0/umd/react<% if (!debug) { %>.production.min<% } else { %>.development<% } %>.js"></script>
+    <script src="https://<%= staticsDomain %>/unpkg/react-dom@16.12.0/umd/react-dom<% if (!debug) { %>.production.min<% } else { %>.development<% } %>.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.__BASEURL__ = '<%= basename %>';
+      window.__LOCALE__ = '<%= language %>';
+      window.__MESSAGES__ = <%- messages %>;
+    </script>
+    <script src="<%= baseStaticsUrl %>app.bundle<% if (!debug) { %>.min<% } %>.js"></script>
+  </body>
+</html>

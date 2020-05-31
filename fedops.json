@@ -1,0 +1,11 @@
+{
+    "appName": "qawolf-todo-list",
+    "notifications": {
+      "slack_channels": [
+        "fedops-urgent-default"
+      ]
+    },
+    "deploy_annotations": [
+      "qawolf-todo-list"
+    ]
+  }
