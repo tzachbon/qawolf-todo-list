@@ -1,40 +1,24 @@
 import React from 'react';
 import { withTranslation, WithTranslation } from '@wix/wix-i18n-config';
 import s from './App.scss';
-
-/* <-- To remove demo stuff just copy-paste:
-  \{?/\*\s?<--([\n\n]|.)*?-->\s?\*\/\}?
-  to your search input with RegExp enabled and remove everything matched.
---> */
+import { Page } from 'wix-style-react';
+import getHeaderProps from './header-props';
+import List from './List';
+import ListInput from './ListInput';
+import { observer } from 'mobx-react-lite';
 
 interface AppProps extends WithTranslation {}
 
-class App extends React.Component<AppProps> {
-  /* <-- Feel free to remove this lifecycle hook and state */
-  /* <-- Please also remove `yoshi-template-intro` from your package.json */
-  state = {
-    TemplateIntro: () => null,
-  };
-  async componentDidMount() {
-    const { default: TemplateIntro } = await import('yoshi-template-intro');
-    this.setState({ TemplateIntro });
-  } /* --> */
+const App: React.FC<AppProps> = ({ t }) => {
+  return (
+    <Page className={s.root} height="100vh">
+      <Page.Header {...getHeaderProps({ t })} />
+      <Page.Content>
+        <ListInput />
+        <List />
+      </Page.Content>
+    </Page>
+  );
+};
 
-  render() {
-    const { t } = this.props;
-
-    return (
-      <div className={s.root}>
-        <h2 className={s.title} data-hook="app-title">
-          {t('app.title', { who: 'Yoshi' })}
-        </h2>
-
-        {/* <-- Feel free to remove TemplateIntro */}
-        <this.state.TemplateIntro />
-        {/* --> */}
-      </div>
-    );
-  }
-}
-
-export default withTranslation()(App);
+export default withTranslation()(observer(App));

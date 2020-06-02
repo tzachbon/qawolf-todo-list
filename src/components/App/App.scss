@@ -1,5 +1,12 @@
 .root {
   text-align: center;
+  display: flex;
+  flex: 1;
+
+  & > div {
+    flex: 1;
+
+  }
 }
 
 .title {

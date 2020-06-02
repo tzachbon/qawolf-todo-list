@@ -11,7 +11,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "resolveJsonModule": true,
     "noEmit": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noImplicitAny": false
   },
   "include": [
     "./__tests__/**/*.ts",

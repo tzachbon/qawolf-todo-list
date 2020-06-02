@@ -1,9 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title><%= title %></title>
-    <link type="image/png" href="https://www.wix.com/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" href="<%= baseStaticsUrl %>app<% if (!debug) { %>.min<% } %>.css">
+    <link
+      type="image/png"
+      href="https://www.wix.com/favicon.ico"
+      rel="shortcut icon"
+    />
+    <link
+      rel="stylesheet"
+      href="<%= baseStaticsUrl %>app<% if (!debug) { %>.min<% } %>.css"
+    />
 
     <!-- Run `npx add-sentry -p qawolf-todo-list -t [TEAM]` to add a valid Sentry link. More information at: https://github.com/wix-private/fed-infra/tree/master/add-sentry -->
 
@@ -14,6 +21,15 @@
     </script>
     <script src="https://<%= staticsDomain %>/unpkg/react@16.12.0/umd/react<% if (!debug) { %>.production.min<% } else { %>.development<% } %>.js"></script>
     <script src="https://<%= staticsDomain %>/unpkg/react-dom@16.12.0/umd/react-dom<% if (!debug) { %>.production.min<% } else { %>.development<% } %>.js"></script>
+    <style>
+      #root {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        min-width: 100vw;
+        min-height: 100vh;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
