@@ -5,6 +5,6 @@ describe('When rendering', () => {
     const url = app.getUrl('/');
     const response = await axios.get(url);
 
-    expect(response.data).toContain('Wix Full Stack Project Boilerplate');
+    expect(response.data).toContain('Faster e2e testing with QA Wolf');
   });
 });

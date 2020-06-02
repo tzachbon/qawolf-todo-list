@@ -49,7 +49,7 @@ export default hot(module, (app: Router, context) => {
       basename,
       messages: JSON.stringify(localI18NCache.getLocaleData(language)),
       debug: debug || process.env.NODE_ENV === 'development',
-      title: 'Wix Full Stack Project Boilerplate',
+      title: 'Faster e2e testing with QA Wolf',
       staticsDomain: config.clientTopology.staticsDomain,
     };
   }
