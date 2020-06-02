@@ -12,7 +12,8 @@
     "build": "yoshi build",
     "test": "yoshi test",
     "lint": "yoshi lint",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "test:create": "NAME=${NAME:-myTest};URL=${URL:-http://localhost:3000/} ; npx qawolf create $URL $NAME "
   },
   "husky": {
     "hooks": {
