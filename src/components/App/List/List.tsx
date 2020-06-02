@@ -1,15 +1,8 @@
 import { observer } from 'mobx-react-lite';
-import React, { memo } from 'react';
-import { Layout, ListItemSelect, Text } from 'wix-style-react';
+import React, { Fragment } from 'react';
+import { Layout, Divider } from 'wix-style-react';
+import ListItem from '../ListItem';
 import useStores from '../store/context';
-import { TodoItem } from '../store/store';
-
-const onToggleCompleted = (item: TodoItem) => (
-  event: React.MouseEvent<HTMLElement>,
-) => {
-  event.preventDefault();
-  item.completed = !item.completed;
-};
 
 const List = () => {
   const {
@@ -17,24 +10,12 @@ const List = () => {
   } = useStores();
 
   return (
-    <Layout
-      dataHook="todo-list"
-      cols={1}
-      alignItems="center"
-      justifyItems="center"
-    >
+    <Layout gap={2} dataHook="todo-list" cols={1} alignItems="center">
       {list.map(item => (
-        <ListItemSelect
-          dataHook="todo-list-item"
-          checkbox
-          ellipsis
-          subtitle={item.startDate}
-          selected={item.completed}
-          onClick={onToggleCompleted(item)}
-          highlighted={item.completed}
-          key={item.id}
-          title={item.name}
-        />
+        <Fragment key={item.id}>
+          <Divider />
+          <ListItem item={item} dataHook="todo-list-item" />
+        </Fragment>
       ))}
     </Layout>
   );

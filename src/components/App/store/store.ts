@@ -1,21 +1,26 @@
-import { observable, decorate, action } from 'mobx';
+import { observable, decorate, action, computed } from 'mobx';
 import generateId from '../utils/id';
+import { getCurrentDateString } from '../utils/date';
 
 export interface TodoItem {
-  id?: string;
+  id: string;
   name: string;
   startDate: string;
-  endDate?: string;
+  endDate?: string | null;
   completed?: boolean;
 }
 
 export default class Store {
-  list: TodoItem[] = [];
+  listMap = new Map<string, TodoItem>();
+
+  get list() {
+    return [...this.listMap.values()];
+  }
 
   generateItem(name) {
     this.addItem({
       name,
-      startDate: new Date().toString(),
+      startDate: getCurrentDateString(),
       id: generateId(),
     });
   }
@@ -25,14 +30,27 @@ export default class Store {
       item.id = generateId();
     }
 
-    this.list.push(item);
+    this.listMap.set(item.id, item);
 
     return item;
+  }
+
+  toggleItemCompleted(item: TodoItem) {
+    item.completed = !item.completed;
+    item.endDate = item.completed ? getCurrentDateString() : null;
+  }
+
+  remove(id: string) {
+    this.listMap.delete(id);
+    return this.list;
   }
 }
 
 decorate(Store, {
-  list: observable,
+  list: computed,
+  listMap: observable,
   addItem: action.bound,
   generateItem: action.bound,
+  toggleItemCompleted: action.bound,
+  remove: action.bound,
 });

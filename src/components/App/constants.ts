@@ -10,5 +10,11 @@ export const APP_CONSTANTS = {
     INPUT: {
       PLACEHOLDER: 'todo-list.input.placeholder',
     },
+    LIST: {
+      ITEM: {
+        REMOVE: 'todo-list.list.item.remove',
+        TOOLTIP: 'todo-list.list.item.tooltip',
+      },
+    },
   },
 };

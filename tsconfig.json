@@ -12,7 +12,8 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "downlevelIteration": true
   },
   "include": [
     "./__tests__/**/*.ts",

@@ -3,5 +3,7 @@
   "todo-list.header.title": "Welcome to THE todo-list",
   "todo-list.header.subtitle": "This is nice POC for QAWolf testing library",
   "todo-list.header.link": "Click for more info",
-  "todo-list.header.href": "https://www.qawolf.com/"
+  "todo-list.header.href": "https://www.qawolf.com/",
+  "todo-list.list.item.remove": "Remove",
+  "todo-list.list.item.tooltip": "Created at: {startDate}"
 }
