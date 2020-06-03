@@ -13,7 +13,8 @@
     "test": "yoshi test",
     "lint": "yoshi lint",
     "posttest": "npm run lint",
-    "test:create": "URL=${URL:-http://localhost:3000/} ; npx qawolf create $URL "
+    "test:create": "URL=${URL:-http://localhost:3000/} ; npx qawolf create $URL ",
+    "test:result": "npx qawolf test"
   },
   "husky": {
     "hooks": {
