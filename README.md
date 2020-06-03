@@ -30,6 +30,8 @@ Hi! This is the demo project for testing with QA Wolf. In this repo you can swit
 To use this project don't forget to run `npm i`.
 Master branch is the finished product. If you want to start from scratch run `git checkout init`
 
+[Simple slide explain about e2e and QA Wolf](https://docs.google.com/presentation/d/e/2PACX-1vQpFOI8Tp8JSzVLfIfHnOHVqL2IzGhgUUSX3mSO4Y4HXWkTJ381DdjqSiG3HbZFg9lUiVlUkTt8ZfkB/pub?start=false&loop=false&delayms=3000)
+
 ## init
 
 A project without testing, here you can start implementing your own testing.
