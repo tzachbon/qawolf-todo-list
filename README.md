@@ -1,4 +1,3 @@
-# qawolf-todo-list
 # Faster e2e tests with QA Wolf
 
 ```
