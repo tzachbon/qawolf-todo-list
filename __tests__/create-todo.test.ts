@@ -20,6 +20,9 @@ test("create-todo", async () => {
   await page.goto("http://localhost:3000/");
   await page.click('[data-hook="wsr-input"]');
   await page.press('[data-hook="wsr-input"]', "CapsLock");
-  await page.type('[data-hook="wsr-input"]', "Some todo");
+  await page.type('[data-hook="wsr-input"]', "Some tests");
   await page.press('[data-hook="wsr-input"]', "Enter");
+  await page.click('[data-hook="checkbox-children"]');
+  await page.click('[data-hook="checkbox-children"]');
+  await page.click('css=[data-hook="page-scrollable-content"] >> text=Some tests');
 });
